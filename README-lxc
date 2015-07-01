@@ -1,0 +1,21 @@
+Update:
+Version 5.0
+Reverse the modification of V2.0 and mb->lgv_dt change of V3.0, because I want to highlight the effect of adaptive average;
+
+Version 4.0
+This version includes the latest change by ZTW, such as new implementation of MTSEED.
+
+Version 3.0
+Change the dt from mb->lgv_dt * BOLTZ to just mb->lgv_dt, thus giving faster integration for Langevin Equation;
+Change the line in function mb_lrbal(): from "if (fabs(s0[0] + s0[1]) < 1e-3)" to "if (fabs(s0[0] + s0[1]) < 1e-6)", in this way we allows the maximum ensemble_factor;
+
+
+Version 2.0
+Change the array of mb->ampf into a two-dimension array with mb->n * mb->m;
+Function mb_normalize() scales specifically in each bin j for estimation of beta_i;
+DID NOT Flush the memory to TRACE file more frequently, for keeping the speed of simulation (turn off the function fflush())
+
+
+Version 1.0
+Change some code for the estimation of energy, so that it is consistent with what is written in the paper;
+
